@@ -9,15 +9,21 @@ public class HomeController : Controller
         
         return View();
     }
-    public IActionResult ListaDestinos(ORTWorld Ortworld) // 
+    public IActionResult ListaDestinos()
     {
         //ORTWorld ortworld = new ORTWorld();
-        ViewBag.DiccionarioPaquetes = ORTWorld.DiccionarioPaquetes;
-        ViewBag.DiccionarioPaquetes.Add("sosdfkos", 1);
-        ViewBag.ListaDestinos.Add("Otakuland"); //cual sera la correcta para mi esta pero no se
+        ViewBag.Diccionario = ORTWorld.DiccionarioPaquetes; 
         return View();
     }
-    public IActionResult SelectPaquete(){ //
+    public IActionResult SelectPaquete(){ // 
+        ViewBag.ListaExcursiones = ORTWorld.ListaExcursiones;
+        ViewBag.ListaAereos = ORTWorld.ListaAereos;
+        ViewBag.ListaHoteles = ORTWorld.ListaHoteles;
+        ViewBag.ListaDestinos = ORTWorld.ListaDestinos;
         return View();
+    }
+    
+    public IActionResult GuardarPaquete(int Destino, int Hotel, int Aereo, int Excursión){
+        Paquete paquete = new Paquete();
     }
 }

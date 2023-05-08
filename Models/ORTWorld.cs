@@ -1,13 +1,12 @@
 class ORTWorld{
 
     public static List<string> ListaDestinos {get; private set;} = new List<string> {"OtakuLand", "DragoncinWorld", "PolnareffLand", "PieceWorld", "MIDWorld", "CPenguinWorld",  }; // Ahora si, acá se le cargan los 10 destinos. hay que ver el de las fotos de hotel
-    public static List<string> ListaHoteles{get; private set;} //CTRL S CTRL S CTRL S CTRL S 
+    public static List<string> ListaHoteles{get; private set;}
     public static List<string> ListaAereos{get; private set;}
     public static List<string> ListaExcursiones{get; private set;}
     public static Dictionary<string, Paquete> DiccionarioPaquetes{get; private set;}
     int i = 0;
 
-    //se agregan aca los valores del diccionario tambien? La verdad no tengo ni idea, pero creo que no, creo que estos los ingresa el usuario.
     //ListaDestinos.Add("OtakuLand");
     //carga mas fotos pone a alfaro asi sube nota
     // for(int i = 0; i < 10; i++){ 
