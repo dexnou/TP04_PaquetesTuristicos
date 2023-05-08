@@ -9,6 +9,4 @@ class Paquete{
         Aereo = pAereo;
         Excursion = pExcursion;
     }
-
-   
 }
