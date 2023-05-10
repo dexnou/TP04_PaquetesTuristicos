@@ -24,7 +24,8 @@ public class HomeController : Controller
             return View("SelectPaquete");
         }else{
             Paquete paquete = new Paquete("", "", ""); 
-            ViewBag.Diccionario = ORTWorld.DiccionarioPaquetes;
+            ViewBag.IngresarPaquete(); //hay que ver si esto esta bien o mal para que se guarde el paquete con el destino deseado y guardarlo en el viewbag. 
+            ViewBag.Diccionario = ORTWorld.DiccionarioPaquetes; //
         } 
         return View("SelectPaquete");
     }

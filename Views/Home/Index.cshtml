@@ -3,6 +3,24 @@
 }
 
 <h1>TP 01 - Index</h1>
-<p>HOLA ESTA ES MI PRIMERA PAGINA WEB GRACIAS</p>
+<p>Ruins Tour: los viajes más baratos </p>
 
-<a href="SelectPaquete.cshtml"><imput type="submit" value="Seleccióna un Paquete"></a>
+<a href='@Url.Action("SelectPaquete", "Home")' alt="Seleccionar Paquete turístico"><img src="img/selectpaquete.png"></a>  @*EL HOME CONTROLLER SE ESCRIBE SOLO COMO HOME.*@
+
+<p>@foreach(string destino in ViewBag.Diccionario.Keys)
+    {
+        <p>@destino</p>
+        <p>@ViewBag.Diccionario[destino]</p>   
+    }
+</p>
+
+
+
+
+
+
+
+
+
+
+
