@@ -7,12 +7,12 @@
 
 <a href='@Url.Action("SelectPaquete", "Home")' alt="Seleccionar Paquete turístico"><img src="img/selectpaquete.png"></a>  @*EL HOME CONTROLLER SE ESCRIBE SOLO COMO HOME.*@
 
-<p>@foreach(string destino in ViewBag.Diccionario.Keys)
-    {
-        <p>@destino</p>
-        <p>@ViewBag.Diccionario[destino]</p>   
-    }
-</p>
+@foreach(string destino in ViewBag.Diccionario.Keys)
+{
+    <p>@destino</p>
+    <p>@ViewBag.Diccionario.[destino]</p>   
+}
+
 
 
 
