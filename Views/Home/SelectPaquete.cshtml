@@ -2,7 +2,7 @@
     ViewData["Title"] = "SelectPaquete";
 }
 <link rel="stylesheet" href="~/css/site.css">
-<a href='@Url.Action("Index", "Home")'><img src="img/selectpaquete.png" alt="Volver al Index"></a>
+<a href='@Url.Action("Index", "Home")'><img src="~/img/volverindex.png" alt="Volver al Index"></a>
 <h1>Seleccionar su paquete: </h1>
 
 @if (ViewBag.MensajeDeError != null)
@@ -29,19 +29,19 @@
     <input type="number" name="Destino" placeholder="Ingrese su Destino"> <br></br>
     @foreach(var pal in ViewBag.ListaHoteles)
     {
-        <img src="~/img/hoteles/@pal" alt="imagen"> <br></br>
+        <img src="~/img/hoteles/@pal" alt="imagen" width="500"> <br></br>
     }
     <input type="number" name="Hotel" placeholder="Ingrese su Hotel"> <br></br>  
 <!-- // poner todo en funcion. EL NAME DEBE SER EL MISMO QUE LA VARIABLE DEL CONTROLLER.  -->
     @foreach(var pal in ViewBag.ListaExcursiones)   
     {
-        <img src="~/img/excursiones/@pal" alt="Excursion"/><br></br>
+        <img src="~/img/excursiones/@pal" alt="Excursion" width="500"><br></br>
     }
     <input type="number" name="Excursión" placeholder="Ingrese su Excursión"> <br></br>
 
     @foreach(var pal in ViewBag.ListaAereos)
     {
-        <img src="~/img/aéreos/@pal" alt="Aéreo"><br></br>
+        <img src="~/img/aéreos/@pal" alt="Aéreo" width="500"><br></br>
     }
     <input type="number" name="Aereo" placeholder="Ingrese su Aereolínea"> 
     <input type="submit" value="Crear Paquete">    

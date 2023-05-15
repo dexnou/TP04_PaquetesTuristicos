@@ -5,14 +5,15 @@
 <h1>TP 04 - Index</h1>
 <p>Ruins Tour: los viajes más baratos </p>
 
-<a href='@Url.Action("SelectPaquete", "Home")' alt="Seleccionar Paquete turístico"><img src="img/selectpaquete.png"></a>  @*EL HOME CONTROLLER SE ESCRIBE SOLO COMO HOME.*@
+<a href='@Url.Action("SelectPaquete", "Home")' alt="Seleccionar Paquete turístico"><img src="~/img/selectpaquete.png"></a>  @*EL HOME CONTROLLER SE ESCRIBE SOLO COMO HOME.*@
 
 @foreach(string destino in ViewBag.Diccionario.Keys)
 {
     <p>@destino , @ViewBag.Diccionario[destino].Hotel, @ViewBag.Diccionario[destino].Excursion, @ViewBag.Diccionario[destino].Aereo</p>  
+    <p><img src="~/img/hoteles/@ViewBag.Diccionario[destino].Hotel" width="500" alt="imagen"> </p>
+    <p><img src="~/img/excursiones/@ViewBag.Diccionario[destino].Excursion" width="500" alt="imagen"> </p>
+    <p><img src="~/img/aéreos/@ViewBag.Diccionario[destino].Aereo" width="500" alt="imagen"> </p>
 }
-
-
 
 
 
