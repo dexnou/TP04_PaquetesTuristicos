@@ -18,15 +18,33 @@ public class HomeController : Controller
     }
     
     public IActionResult GuardarPaquete(int Destino, int Hotel, int Aereo, int Excursión){ 
-        List<int> num = new List<int>(4);
-        if(Destino == 0 | Hotel == 0 | Aereo == 0 | Excursión == 0){ 
-            ViewBag.MensajeDeError = "NO SE RECIBIERON LOS PARAMETROS CORRECTAMENTE. FALTAN: "; //falta hacer esto del viewbag
+        int[] vectorNum = new int[] { Destino, Hotel, Aereo, Excursión };
+        string[] vectorNombres = new string[] { "Destino", "Hotel", "Aereo", "Excursión" };
+        Dictionary<string, int> diccionarioFaltantes = new Dictionary<string, int>();
+        
+        if(Destino > 10 | Destino <= 0 | Hotel > 10 | Hotel <=0 | Aereo > 10 | Aereo <=0 | Excursión > 10 | Aereo<=0){ 
+            ViewBag.MensajeDeError = "NO SE RECIBIERON LOS PARÁMETROS CORRECTAMENTE. FALTAN: "; //falta hacer esto del viewbag
+            for(int i = 0; i < 4; i++){
+                if(vectorNum[i] <=0 | vectorNum[i] > 10){
+                    diccionarioFaltantes.Add(vectorNombres[i], vectorNum[i]);
+                }
+            }
+            ViewBag.diccionarioFaltantes = diccionarioFaltantes;
+            SelectPaquete();
             return View("SelectPaquete");
         }else{
-            Paquete paquete = new Paquete("", "", ""); 
-            ViewBag.IngresarPaquete(); //hay que ver si esto esta bien o mal para que se guarde el paquete con el destino deseado y guardarlo en el viewbag. 
-            ViewBag.Diccionario = ORTWorld.DiccionarioPaquetes; //
+            Index();
+            Paquete paquete = new Paquete(ORTWorld.ListaHoteles[Hotel], ORTWorld.ListaAereos[Aereo], ORTWorld.ListaExcursiones[Excursión]); 
+            ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino], paquete); //hay que ver si esto esta bien o mal para que se guarde el paquete con el destino deseado y guardarlo en el viewbag. 
         } 
-        return View("SelectPaquete");
+        return View("Index");
     }
 }
+
+
+
+//Falta: 
+// Todo lo visual de cs. 
+// Arreglar el problema de las imagenes. 
+// Arreglar el problema de seleccion +1. Ej: Si elegis el Hotel1, te guarda que elegiste el Hotel2. 
+// Cambiar el "Ese destino ya existe" para que no aparezca en la consola, sino en la web. 
