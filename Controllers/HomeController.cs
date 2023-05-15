@@ -34,17 +34,15 @@ public class HomeController : Controller
             return View("SelectPaquete");
         }else{
             Index();
-            Paquete paquete = new Paquete(ORTWorld.ListaHoteles[Hotel], ORTWorld.ListaAereos[Aereo], ORTWorld.ListaExcursiones[Excursión]); 
-            ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino], paquete); //hay que ver si esto esta bien o mal para que se guarde el paquete con el destino deseado y guardarlo en el viewbag. 
+            Paquete paquete = new Paquete(ORTWorld.ListaHoteles[Hotel-1], ORTWorld.ListaAereos[Aereo-1], ORTWorld.ListaExcursiones[Excursión-1]); 
+            bool existe = ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino], paquete); //hay que ver si esto esta bien o mal para que se guarde el paquete con el destino deseado y guardarlo en el viewbag. 
+            ViewBag.Existe = existe;
+            ViewBag.MensajeYaExiste = "Ese destino ya existe. ";
         } 
         return View("Index");
     }
 }
 
-
-
 //Falta: 
-// Todo lo visual de cs. 
-// Arreglar el problema de las imagenes. 
-// Arreglar el problema de seleccion +1. Ej: Si elegis el Hotel1, te guarda que elegiste el Hotel2. 
+// Todo lo visual de cs.   
 // Cambiar el "Ese destino ya existe" para que no aparezca en la consola, sino en la web. 

@@ -1,17 +1,22 @@
 @{
     ViewData["Title"] = "SelectPaquete";
 }
-
+<link rel="stylesheet" href="~/css/site.css">
 <a href='@Url.Action("Index", "Home")'><img src="img/selectpaquete.png" alt="Volver al Index"></a>
 <h1>Seleccionar su paquete: </h1>
 
 @if (ViewBag.MensajeDeError != null)
-    {
-        @ViewBag.MensajeDeError
-        foreach(var palabra in ViewBag.diccionarioFaltantes){
-            <p>@palabra</p>
-        }
+{
+    @ViewBag.MensajeDeError
+    foreach(var palabra in ViewBag.diccionarioFaltantes){
+        <p>@palabra</p>
     }
+}
+@if (ViewBag.Existe == true)
+{
+    @ViewBag.MensajeYaExiste
+}
+
 <form action='@Url.Action("GuardarPaquete")'>      
     @{
         int contador = 1;
@@ -21,28 +26,23 @@
         <p>@contador . @palabra</p>
         contador++;
     }
-    <input type="number" name="Destino" placeholder="Ingrese su Destino">
-
+    <input type="number" name="Destino" placeholder="Ingrese su Destino"> <br></br>
     @foreach(var pal in ViewBag.ListaHoteles)
     {
-        <p>@pal</p>
-        <img src="@Url.Content(pal)" alt="hotel"/>
-        <img src="~/imagen/@pal" alt="imagen" />
+        <img src="~/img/hoteles/@pal" alt="imagen"> <br></br>
     }
-    <input type="number" name="Hotel" placeholder="Ingrese su Hotel">  
-
-    @foreach(var pal in ViewBag.ListaExcursiones) // poner todo en funcion. EL NAME DEBE SER EL MISMO QUE LA VARIABLE DEL CONTROLLER. 
+    <input type="number" name="Hotel" placeholder="Ingrese su Hotel"> <br></br>  
+<!-- // poner todo en funcion. EL NAME DEBE SER EL MISMO QUE LA VARIABLE DEL CONTROLLER.  -->
+    @foreach(var pal in ViewBag.ListaExcursiones)   
     {
-        <img src="@Url.Content(pal)" alt="Excursion"/>
+        <img src="~/img/excursiones/@pal" alt="Excursion"/><br></br>
     }
-    <input type="number" name="Excursión" placeholder="Ingrese su Excursión"> 
+    <input type="number" name="Excursión" placeholder="Ingrese su Excursión"> <br></br>
 
     @foreach(var pal in ViewBag.ListaAereos)
     {
-        <img src="@Url.Content(pal)" alt="Aereo"/>
+        <img src="~/img/aéreos/@pal" alt="Aéreo"><br></br>
     }
     <input type="number" name="Aereo" placeholder="Ingrese su Aereolínea"> 
-    <input type="submit" value="Crear Paquete"> 
-
-    
+    <input type="submit" value="Crear Paquete">    
 </form>

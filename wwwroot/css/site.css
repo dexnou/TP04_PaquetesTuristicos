@@ -19,3 +19,12 @@ footer {
   bottom: 0; 
   margin: 10px 0px 20px 0px;
 }
+
+p {
+  font-family: Verdana;
+}
+
+h1 {
+  color: Red;
+  font-family: Verdana;
+}
