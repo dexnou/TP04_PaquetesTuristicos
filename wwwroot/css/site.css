@@ -28,3 +28,13 @@ h1 {
   color: Red;
   font-family: Verdana;
 }
+
+.contenedor{
+  display: inline-block;
+  justify-content: center;
+}
+.imagen{
+  width: 500px;
+}.contenedor2{
+  display: flex;
+}

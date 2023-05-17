@@ -29,19 +29,25 @@
     <input type="number" name="Destino" placeholder="Ingrese su Destino"> <br></br>
     @foreach(var pal in ViewBag.ListaHoteles)
     {
-        <img src="~/img/hoteles/@pal" alt="imagen" width="500"> <br></br>
+        <div class="contenedor">
+            <img class ="imagenes" src="~/img/hoteles/@pal" alt="imagen" width="500">
+        </div>
     }
     <input type="number" name="Hotel" placeholder="Ingrese su Hotel"> <br></br>  
 <!-- // poner todo en funcion. EL NAME DEBE SER EL MISMO QUE LA VARIABLE DEL CONTROLLER.  -->
     @foreach(var pal in ViewBag.ListaExcursiones)   
     {
-        <img src="~/img/excursiones/@pal" alt="Excursion" width="500"><br></br>
+        <div class="contenedor">
+            <img class="imagenes" src="~/img/excursiones/@pal" alt="Excursion" width="500">
+        </div>
     }
     <input type="number" name="Excursión" placeholder="Ingrese su Excursión"> <br></br>
 
     @foreach(var pal in ViewBag.ListaAereos)
     {
-        <img src="~/img/aéreos/@pal" alt="Aéreo" width="500"><br></br>
+        <div class="contenedor">
+            <img class="imagenes" src="~/img/aéreos/@pal" alt="Aéreo" width="500">
+        </div>        
     }
     <input type="number" name="Aereo" placeholder="Ingrese su Aereolínea"> 
     <input type="submit" value="Crear Paquete">    

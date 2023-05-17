@@ -10,9 +10,11 @@
 @foreach(string destino in ViewBag.Diccionario.Keys)
 {
     <p>@destino , @ViewBag.Diccionario[destino].Hotel, @ViewBag.Diccionario[destino].Excursion, @ViewBag.Diccionario[destino].Aereo</p>  
-    <p><img src="~/img/hoteles/@ViewBag.Diccionario[destino].Hotel" width="500" alt="imagen"> </p>
-    <p><img src="~/img/excursiones/@ViewBag.Diccionario[destino].Excursion" width="500" alt="imagen"> </p>
-    <p><img src="~/img/aéreos/@ViewBag.Diccionario[destino].Aereo" width="500" alt="imagen"> </p>
+    <div class="contenedor2">
+        <p><img class="imagen" src="~/img/hoteles/@ViewBag.Diccionario[destino].Hotel" width="500" alt="imagen"> </p>
+        <p><img class="imagen" src="~/img/excursiones/@ViewBag.Diccionario[destino].Excursion" width="500" alt="imagen"> </p>
+        <p><img class="imagen" src="~/img/aéreos/@ViewBag.Diccionario[destino].Aereo" width="500" alt="imagen"> </p>
+    </div>
 }
 
 
