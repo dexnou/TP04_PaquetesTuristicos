@@ -8,7 +8,7 @@ class ORTWorld{
     {
         if(DiccionarioPaquetes.ContainsKey(destinoSeleccionado))
         {
-            Console.WriteLine("Ese destino ya existe");
+            Console.WriteLine("Ese destino ya existe"); // Arreglar para que en vez de que aparezca en Consola aparezca en web.
             return true;
         }else{ 
             DiccionarioPaquetes.Add(destinoSeleccionado, paquete);

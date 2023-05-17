@@ -35,7 +35,7 @@ public class HomeController : Controller
         }else{
             Index();
             Paquete paquete = new Paquete(ORTWorld.ListaHoteles[Hotel-1], ORTWorld.ListaAereos[Aereo-1], ORTWorld.ListaExcursiones[Excursión-1]); 
-            bool existe = ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino], paquete); //hay que ver si esto esta bien o mal para que se guarde el paquete con el destino deseado y guardarlo en el viewbag. 
+            bool existe = ORTWorld.IngresarPaquete(ORTWorld.ListaDestinos[Destino-1], paquete); //hay que ver si esto esta bien o mal para que se guarde el paquete con el destino deseado y guardarlo en el viewbag. 
             ViewBag.Existe = existe;
             ViewBag.MensajeYaExiste = "Ese destino ya existe. ";
         } 
