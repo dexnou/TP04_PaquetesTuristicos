@@ -8,7 +8,7 @@
 @if (ViewBag.MensajeDeError != null)
 {
     @ViewBag.MensajeDeError
-    foreach(var palabra in ViewBag.diccionarioFaltantes){
+    foreach(string palabra in ViewBag.diccionarioFaltantes){
         <p>@palabra</p>
     }
 }
@@ -21,20 +21,20 @@
     @{
         int contador = 1;
     }
-    @foreach(var palabra in ViewBag.ListaDestinos)
+    @foreach(string palabra in ViewBag.ListaDestinos)
     {
         <p>@contador . @palabra</p>
         contador++;
     }
     <input type="number" name="Destino" placeholder="Ingrese su Destino"> <br></br>
-    @foreach(var pal in ViewBag.ListaHoteles)
+    @foreach(string pal in ViewBag.ListaHoteles)
     {
         <div class="contenedor">
             <img class ="imagenes" src="~/img/hoteles/@pal" alt="imagen" width="500">
         </div>
     }
     <input type="number" name="Hotel" placeholder="Ingrese su Hotel"> <br></br>  
-    @foreach(var pal in ViewBag.ListaExcursiones)   
+    @foreach(string pal in ViewBag.ListaExcursiones)   
     {
         <div class="contenedor">
             <img class="imagenes" src="~/img/excursiones/@pal" alt="Excursion" width="500">
@@ -42,7 +42,7 @@
     }
     <input type="number" name="Excursión" placeholder="Ingrese su Excursión"> <br></br>
 
-    @foreach(var pal in ViewBag.ListaAereos)
+    @foreach(string pal in ViewBag.ListaAereos)
     {
         <div class="contenedor">
             <img class="imagenes" src="~/img/aéreos/@pal" alt="Aéreo" width="500">
