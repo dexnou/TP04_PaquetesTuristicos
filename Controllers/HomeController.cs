@@ -16,6 +16,14 @@ public class HomeController : Controller
         ViewBag.ListaDestinos = ORTWorld.ListaDestinos;
         return View();
     }
+
+     public IActionResult EliminarPaquete(int Destino, Paquete paquete){
+
+        ////Index();
+        ////Paquete paquete = new Paquete("","","");
+        ORTWorld.EliminarPaquete(ORTWorld.ListaDestinos[Destino], paquete); 
+        return View();
+     }
     
     public IActionResult GuardarPaquete(int Destino, int Hotel, int Aereo, int Excursión){ 
         int[] vectorNum = new int[] { Destino, Hotel, Aereo, Excursión };

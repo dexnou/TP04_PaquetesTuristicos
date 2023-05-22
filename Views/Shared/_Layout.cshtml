@@ -5,11 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>@ViewData["Title"] - TP04 - Rotbard y Fernandez Zabala</title>
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     </head>
     <body>
-        <header style="position:fixed; top: 0; margin: 10px 0px 20px 0px;">
+        @* <header style="position:fixed; top: 0; margin: 10px 0px 20px 0px;">
             Encabezado TP 04
-        </header>
+        </header> *@
+        <header>
+		    <div class="wrapper">
+			    <div class="logo">Ruins.Code</div>
+			    <nav>
+				    <a href="@Url.Action("SelectPaquete", "Home")">Seleccione su paquete</a>
+				    <a href="@Url.Action("Index", "Home")">Vuelva al Index</a>
+				    <a href="#">No toques aquí 🥶</a>
+				    <a href="#">Aquí menos 🥶🥶</a>
+			    </nav>
+		    </div>
+	    </header>
         <div style="padding:20px 10px 0px 10px;">
             @RenderBody()
         </div>

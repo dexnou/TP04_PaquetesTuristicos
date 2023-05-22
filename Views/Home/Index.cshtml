@@ -2,6 +2,7 @@
     ViewData["Title"] = "Index";
 }
 <link rel="stylesheet" href="~/css/site.css">
+
 <h1>TP 04 - Index</h1>
 <p>Ruins Tour: los viajes más baratos </p>
 
@@ -15,16 +16,7 @@
         <p><img class="imagen" src="~/img/excursiones/@ViewBag.Diccionario[destino].Excursion" width="500" alt="imagen"> </p>
         <p><img class="imagen" src="~/img/aéreos/@ViewBag.Diccionario[destino].Aereo" width="500" alt="imagen"> </p>
     </div>
+    <form action='@Url.Action("EliminarPaquete")'>  
+        <input type="submit" value="Eliminar Paquete"> 
+    </form>
 }
-
-
-
-
-
-
-
-
-
-
-
-
